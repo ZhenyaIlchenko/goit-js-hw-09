@@ -11,7 +11,7 @@ const options = {
   },
 };
 
-function flatpickr(selector, options) {}
+// function flatpickr(selector, options) {}
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
