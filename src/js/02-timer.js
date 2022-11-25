@@ -56,8 +56,8 @@ const timer = {
     }, 1000);
   },
   stop() {
-    if () {
-    }
+    // if (setIntervalTime = ) {
+    // }
     clearInterval(this.intervalId);
   },
 };
