@@ -41,26 +41,25 @@ const options = {
 const fpInput = flatpickr(refs.input, options);
 
 refs.button.addEventListener('click', () => {
-  timer.start();
+  start();
 });
 
-const timer = {
-  start() {
-    this.intervalId = setInterval(() => {
-      const currentTime = Date.now();
+function start() {
+  let intervalId = setInterval(() => {
+    const currentTime = Date.now();
 
-      const setIntervalTime = flikerDate - currentTime;
-      console.log(setIntervalTime);
-      let time = convertMs(setIntervalTime);
-      updateTimer(time);
-    }, 1000);
-  },
-  stop() {
-    // if (setIntervalTime = ) {
-    // }
-    clearInterval(this.intervalId);
-  },
-};
+    let intervalTime = flikerDate - currentTime;
+    console.log(intervalTime);
+    let time = convertMs(intervalTime);
+
+    if (intervalTime < 0) {
+      clearInterval(intervalId);
+      return;
+    }
+
+    updateTimer(time);
+  }, 1000);
+}
 
 function updateTimer({ days, hours, minutes, seconds }) {
   refs.days.textContent = `${days}`;
