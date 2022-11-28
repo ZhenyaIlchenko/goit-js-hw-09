@@ -7,7 +7,7 @@ const refs = {
   amount: document.querySelector('[name="amount"]'),
 };
 
-refs.button.addEventListener('click', onFormSubmit);
+refs.button.addEventListener('submit', onFormSubmit);
 
 function createPromise(position, delay) {
   const shouldResolve = Math.random() > 0.3;
